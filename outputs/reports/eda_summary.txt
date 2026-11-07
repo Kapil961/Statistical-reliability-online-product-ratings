@@ -1,0 +1,30 @@
+EXPLORATORY DATA ANALYSIS SUMMARY
+=================================================================
+
+Total reviews: 366692
+Total products: 75680
+Total users: 305033
+Number of categories: 4
+
+Overall mean rating: 4.4134
+Overall rating variance: 1.4918
+Overall rating standard deviation: 1.2214
+
+PRODUCT REVIEW COUNT GROUPS
+-----------------------------------------------------------------
+review_count_group  number_of_products  average_product_rating  median_product_rating  standard_deviation  perfect_rating_percentage
+                 1               54488                4.508130               5.000000            1.045151                  75.605638
+               2-4               14950                4.490847               5.000000            0.781233                  55.090301
+               5-9                3241                4.422520               4.600000            0.641447                  25.023141
+             10-29                1969                4.347112               4.500000            0.577665                   6.602336
+             30-99                 712                4.241575               4.367157            0.534777                   0.280899
+           100-999                 294                4.222536               4.288098            0.499356                   0.000000
+             1000+                  26                4.389665               4.495704            0.357014                   0.000000
+
+CATEGORY SUMMARY
+-----------------------------------------------------------------
+              category  total_reviews  review_level_mean  review_level_std  total_products  product_level_mean  product_level_std
+         Digital_Music         128764           4.535833          1.024053           70511            4.528936           0.948916
+            Gift_Cards         150989           4.554067          1.153560            1137            4.254608           1.050421
+Magazine_Subscriptions          70922           4.037196          1.460216            3391            3.986659           1.084598
+    Subscription_Boxes          16017           3.769932          1.545820             641            3.665397           1.154720

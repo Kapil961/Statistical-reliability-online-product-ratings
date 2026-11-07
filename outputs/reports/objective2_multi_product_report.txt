@@ -1,0 +1,24 @@
+OBJECTIVE 2: MULTI-PRODUCT RELIABILITY ANALYSIS
+=================================================================
+
+Total reviews: 366692
+Unique products: 75680
+Pooled rating variance: 1.491801
+Pooled rating standard deviation: 1.221393
+
+GROUP-WISE RELIABILITY COMPARISON
+=================================================================
+review_count_group  number_of_products  average_review_count  average_rating  average_observed_variance  average_observed_std  average_observed_se  average_theoretical_se
+                 1               54488              1.000000        4.508130                        NaN                   NaN                  NaN                1.221393
+               2-4               14950              2.490903        4.490847                   0.991940              0.567753             0.363183                0.793909
+               5-9                3241              6.400802        4.422520                   1.161233              0.837977             0.335220                0.490446
+             10-29                1969             15.905536        4.347112                   1.328253              1.025916             0.264661                0.318279
+             30-99                 712             51.751404        4.241575                   1.569175              1.186032             0.171239                0.177341
+           100-999                 294            252.210884        4.222536                   1.670270              1.241326             0.089448                0.087960
+             1000+                  26           4304.038462        4.389665                   1.557651              1.214490             0.027358                0.027021
+
+METHODOLOGICAL LIMITATIONS
+=================================================================
+The pooled standard deviation is used as a common reference for theoretical standard errors. Actual products may have different rating variances.
+Products with one review have undefined sample variance and sample standard deviation.
+The standard error formula assumes independent observations. Actual customer reviews may not satisfy this assumption.

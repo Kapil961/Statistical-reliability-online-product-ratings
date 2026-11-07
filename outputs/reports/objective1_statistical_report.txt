@@ -1,0 +1,79 @@
+OBJECTIVE 1: REVIEW COUNT VS PRODUCT RATING
+=================================================================
+
+Total products: 75680
+
+Pearson correlation: -0.002571
+Correlation p-value: 0.47933745
+
+ORIGINAL-SCALE REGRESSION
+-----------------------------------------------------------------
+                            OLS Regression Results
+==============================================================================
+Dep. Variable:            mean_rating   R-squared:                       0.000
+Model:                            OLS   Adj. R-squared:                 -0.000
+Method:                 Least Squares   F-statistic:                    0.5004
+Date:                Sat, 07 Nov 2026   Prob (F-statistic):              0.479
+Time:                        11:30:44   Log-Likelihood:            -1.0500e+05
+No. Observations:               75680   AIC:                         2.100e+05
+Df Residuals:                   75678   BIC:                         2.100e+05
+Df Model:                           1
+Covariance Type:            nonrobust
+==============================================================================
+                 coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+const          4.4933      0.004   1275.117      0.000       4.486       4.500
+n_reviews  -1.606e-05   2.27e-05     -0.707      0.479   -6.06e-05    2.84e-05
+==============================================================================
+Omnibus:                    33687.238   Durbin-Watson:                   1.945
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):           135630.639
+Skew:                          -2.279   Prob(JB):                         0.00
+Kurtosis:                       7.715   Cond. No.                         155.
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
+LOG-TRANSFORMED REGRESSION
+-----------------------------------------------------------------
+                            OLS Regression Results
+==============================================================================
+Dep. Variable:            mean_rating   R-squared:                       0.002
+Model:                            OLS   Adj. R-squared:                  0.002
+Method:                 Least Squares   F-statistic:                     142.5
+Date:                Sat, 07 Nov 2026   Prob (F-statistic):           8.27e-33
+Time:                        11:30:44   Log-Likelihood:            -1.0492e+05
+No. Observations:               75680   AIC:                         2.099e+05
+Df Residuals:                   75678   BIC:                         2.099e+05
+Df Model:                           1
+Covariance Type:            nonrobust
+====================================================================================
+                       coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------------
+const                4.5584      0.006    701.883      0.000       4.546       4.571
+log_review_count    -0.0679      0.006    -11.935      0.000      -0.079      -0.057
+==============================================================================
+Omnibus:                    34324.322   Durbin-Watson:                   1.950
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):           142369.944
+Skew:                          -2.315   Prob(JB):                         0.00
+Kurtosis:                       7.870   Cond. No.                         3.43
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
+REVIEW COUNT GROUP SUMMARY
+-----------------------------------------------------------------
+review_count_group  number_of_products  average_rating  median_rating  rating_std
+                 1               54488        4.508130       5.000000    1.045151
+               2-4               14950        4.490847       5.000000    0.781233
+               5-9                3241        4.422520       4.600000    0.641447
+             10-29                1969        4.347112       4.500000    0.577665
+             30-99                 712        4.241575       4.367157    0.534777
+           100-999                 294        4.222536       4.288098    0.499356
+             1000+                  26        4.389665       4.495704    0.357014
+
+INTERPRETATION
+-----------------------------------------------------------------
+The observed Pearson correlation is negative.
+Correlation and regression describe association, not causation.

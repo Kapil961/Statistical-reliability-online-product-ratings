@@ -1,0 +1,81 @@
+OBJECTIVE 1: CATEGORY INTERACTION ANALYSIS
+=================================================================
+
+INTERACTION MODEL
+                            OLS Regression Results
+==============================================================================
+Dep. Variable:            mean_rating   R-squared:                       0.021
+Model:                            OLS   Adj. R-squared:                  0.021
+Method:                 Least Squares   F-statistic:                     236.2
+Date:                Sat, 07 Nov 2026   Prob (F-statistic):               0.00
+Time:                        11:45:14   Log-Likelihood:            -1.0418e+05
+No. Observations:               75680   AIC:                         2.084e+05
+Df Residuals:                   75672   BIC:                         2.084e+05
+Df Model:                           7
+Covariance Type:            nonrobust
+======================================================================================================
+                                         coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------------------------------
+const                                  4.5153      0.008    537.342      0.000       4.499       4.532
+log_review_count                       0.0155      0.009      1.801      0.072      -0.001       0.032
+Gift_Cards                            -0.5481      0.052    -10.504      0.000      -0.650      -0.446
+Magazine_Subscriptions                -0.6115      0.031    -19.645      0.000      -0.673      -0.551
+Subscription_Boxes                    -0.9009      0.069    -13.043      0.000      -1.036      -0.766
+log_count_x_Gift_Cards                 0.0971      0.019      5.136      0.000       0.060       0.134
+log_count_x_Magazine_Subscriptions     0.0280      0.016      1.779      0.075      -0.003       0.059
+log_count_x_Subscription_Boxes         0.0107      0.031      0.349      0.727      -0.049       0.071
+==============================================================================
+Omnibus:                    34012.248   Durbin-Watson:                   1.969
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):           141033.740
+Skew:                          -2.288   Prob(JB):                         0.00
+Kurtosis:                       7.876   Cond. No.                         31.2
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
+CATEGORY-SPECIFIC SLOPES
+              category    slope
+         Digital_Music 0.015529
+            Gift_Cards 0.112675
+Magazine_Subscriptions 0.043486
+    Subscription_Boxes 0.026225
+
+CATEGORY-WISE GROUP SUMMARY
+              category review_count_group  number_of_products  average_rating
+         Digital_Music                  1               53087        4.525515
+         Digital_Music                2-4               13761        4.535220
+         Digital_Music                5-9                2461        4.552557
+         Digital_Music              10-29                1009        4.559098
+         Digital_Music              30-99                 178        4.565095
+         Digital_Music            100-999                  15        4.538734
+         Digital_Music              1000+                   0             NaN
+            Gift_Cards                  1                 239        3.958159
+            Gift_Cards                2-4                 208        4.143830
+            Gift_Cards                5-9                 140        4.181823
+            Gift_Cards              10-29                 231        4.344276
+            Gift_Cards              30-99                 180        4.491206
+            Gift_Cards            100-999                 120        4.553588
+            Gift_Cards              1000+                  19        4.512751
+Magazine_Subscriptions                  1                 988        3.858300
+Magazine_Subscriptions                2-4                 824        4.005967
+Magazine_Subscriptions                5-9                 526        4.041332
+Magazine_Subscriptions              10-29                 625        4.109306
+Magazine_Subscriptions              30-99                 294        4.003652
+Magazine_Subscriptions            100-999                 129        3.981843
+Magazine_Subscriptions              1000+                   5        4.211142
+    Subscription_Boxes                  1                 174        3.649425
+    Subscription_Boxes                2-4                 157        3.606157
+    Subscription_Boxes                5-9                 114        3.669730
+    Subscription_Boxes              10-29                 104        3.725869
+    Subscription_Boxes              30-99                  60        3.698724
+    Subscription_Boxes            100-999                  30        3.775211
+    Subscription_Boxes              1000+                   2        3.666659
+
+MODEL COMPARISON
+                   model  R_squared  Adjusted_R_squared  Residual_Sum_of_Squares
+   Common category slope   0.021034            0.020982             69554.461201
+Category-specific slopes   0.021380            0.021290             69529.850354
+
+JOINT INTERACTION TEST
+<F test: F=8.928309550235875, p=6.545738439427016e-06, df_denom=7.57e+04, df_num=3>

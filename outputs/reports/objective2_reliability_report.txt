@@ -1,0 +1,24 @@
+OBJECTIVE 2: STATISTICAL RELIABILITY OF PRODUCT RATINGS
+=================================================================
+
+Total reviews: 366692
+Unique products: 75680
+
+GROUP-WISE RELIABILITY SUMMARY
+=================================================================
+review_count_group  number_of_products  average_rating  average_rating_variance  average_rating_std  average_standard_error  median_standard_error
+                 1               54488        4.508130                      NaN                 NaN                     NaN                    NaN
+               2-4               14950        4.490847                 0.991940            0.567753                0.363183               0.000000
+               5-9                3241        4.422520                 1.161233            0.837977                0.335220               0.293972
+             10-29                1969        4.347112                 1.328253            1.025916                0.264661               0.268313
+             30-99                 712        4.241575                 1.569175            1.186032                0.171239               0.171067
+           100-999                 294        4.222536                 1.670270            1.241326                0.089448               0.087119
+             1000+                  26        4.389665                 1.557651            1.214490                0.027358               0.026820
+
+THEORETICAL RELATIONSHIP
+SE(mean rating) = s / sqrt(n)
+The standard error generally decreases as sample size increases, assuming independent observations with finite variance.
+
+LIMITATIONS
+Products with one review have undefined sample variance and sample standard deviation.
+The standard error formula assumes independent observations. Repeated reviews may not be independent or representative.

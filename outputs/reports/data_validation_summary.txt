@@ -1,0 +1,41 @@
+AMAZON REVIEWS DATASET VALIDATION REPORT
+=======================================================
+
+Original rows: 370557
+Cleaned rows: 366692
+Removed duplicate rows: 3865
+Remaining duplicate rows: 0
+
+Number of columns: 11
+Unique products: 75680
+Unique users: 305033
+
+Missing values: 0
+Valid ratings: True
+Product count consistency: True
+User count consistency: True
+Product count constant within product: True
+User count constant within user: True
+Products with multiple categories: 0
+
+CATEGORY REVIEW COUNTS
+-------------------------------------------------------
+category
+Gift_Cards                150989
+Digital_Music             128764
+Magazine_Subscriptions     70922
+Subscription_Boxes         16017
+
+RATING DISTRIBUTION
+-------------------------------------------------------
+rating
+1.0     30283
+2.0     10356
+3.0     16286
+4.0     30313
+5.0    279454
+
+REVIEW DATE RANGE
+-------------------------------------------------------
+Start: 1997-09-18
+End: 2023-09-06

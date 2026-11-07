@@ -1,0 +1,16 @@
+measure,classification,number_of_products
+evidence_level,Insufficient,54488
+evidence_level,Low,18191
+evidence_level,Moderate,2681
+evidence_level,High,294
+evidence_level,Very High,26
+precision_level,Not Available,54488
+precision_level,Low,9858
+precision_level,Very High,9623
+precision_level,Moderate,1318
+precision_level,High,393
+consistency_level,Not Available,54488
+consistency_level,Very High,10731
+consistency_level,Low,6477
+consistency_level,High,2878
+consistency_level,Moderate,1106
