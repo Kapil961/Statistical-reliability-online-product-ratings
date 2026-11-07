@@ -29,3 +29,7 @@ data/raw/*
 data/processed/*
 !data/raw/.gitkeep
 !data/processed/.gitkeep
+
+# Include project datasets in GitHub
+!data/raw/amazon_reviews.csv
+!data/processed/amazon_reviews_cleaned.csv
