@@ -2,9 +2,11 @@
 
 ## Project Overview
 
-This project investigates the statistical reliability of online product ratings using the Amazon Reviews dataset. It applies statistical concepts to examine how review volume, rating variation, and sample size affect the interpretation and precision of product ratings.
+This project investigates the statistical reliability of online product ratings using the **Amazon Reviews 2023** dataset.
 
-The project focuses on understanding whether a product's average rating provides meaningful information when the number of customer reviews and the variation among those reviews differ.
+It applies statistical methods to examine how review volume, rating variation, and sample size affect the interpretation and precision of product ratings.
+
+The project explores whether a product's average rating provides meaningful information when the number of customer reviews and the variation among those reviews differ.
 
 ## Project Objectives
 
@@ -14,7 +16,7 @@ This project has exactly three objectives.
 
 Investigate the relationship between the number of customer reviews and the average product rating.
 
-Statistical methods:
+**Statistical methods:**
 - Pearson correlation coefficient
 - Simple linear regression
 - Log-transformed regression
@@ -26,7 +28,7 @@ Statistical methods:
 
 Study how sample size affects the precision of estimated product ratings.
 
-Statistical methods:
+**Statistical methods:**
 - Mean, variance, and standard deviation
 - Standard error of the sample mean
 - Central Limit Theorem (CLT)
@@ -46,7 +48,16 @@ Project-defined classification thresholds are used to summarize these dimensions
 
 ## Dataset
 
-The project uses an Amazon Reviews dataset containing product-level and review-level information.
+The project uses the **Amazon Reviews 2023** dataset from McAuley Lab, University of California, San Diego.
+
+Both the original and cleaned datasets are included in this GitHub repository.
+
+### Dataset files
+
+| File | Description |
+|---|---|
+| `data/raw/amazon_reviews.csv` | Original dataset |
+| `data/processed/amazon_reviews_cleaned.csv` | Cleaned dataset used for statistical analysis |
 
 ### Dataset characteristics
 
@@ -54,10 +65,12 @@ The project uses an Amazon Reviews dataset containing product-level and review-l
 |---|---:|
 | Original reviews | 370,557 |
 | Cleaned reviews | 366,692 |
+| Exact duplicate rows removed | 3,865 |
 | Unique products | 75,680 |
 | Unique users | 305,033 |
-| Categories | 4 |
+| Product categories | 4 |
 | Original dataset size | Approximately 38 MB |
+| Cleaned dataset size | Approximately 38 MB |
 
 ### Product categories
 
@@ -69,6 +82,7 @@ The project uses an Amazon Reviews dataset containing product-level and review-l
 ### Data cleaning
 
 The cleaning process includes:
+
 - Required-column validation
 - Missing-value inspection
 - Exact duplicate removal
@@ -97,7 +111,8 @@ After applying the logarithmic transformation:
 \hat{Y}=4.5584-0.0679\ln(1+X)
 \]
 
-where:
+Where:
+
 - \(Y\) = average product rating
 - \(X\) = number of reviews
 
@@ -130,7 +145,8 @@ The standard error of the sample mean is:
 SE=\frac{s}{\sqrt{n}}
 \]
 
-where:
+Where:
+
 - \(s\) = sample standard deviation
 - \(n\) = number of reviews
 
@@ -168,7 +184,7 @@ The observed simulation probabilities remained within the corresponding theoreti
 
 ### Objective 3: Product Rating Reliability Measurement
 
-Each product was evaluated using:
+Each product was evaluated using three dimensions.
 
 **Precision**
 
@@ -182,13 +198,15 @@ SE=\frac{s}{\sqrt{n}}
 s=\sqrt{\frac{\sum_{i=1}^{n}(x_i-\bar{x})^2}{n-1}}
 \]
 
-**Evidence volume**
+**Evidence Volume**
 
 \[
 n=\text{Number of observed reviews}
 \]
 
 The analysis covered 75,680 products.
+
+#### Evidence volume classification
 
 | Evidence classification | Number of products |
 |---|---:|
@@ -209,7 +227,12 @@ statistical-reliability-online-product-ratings/
 │
 ├── data/
 │   ├── raw/
+│   │   ├── amazon_reviews.csv
+│   │   └── .gitkeep
+│   │
 │   └── processed/
+│       ├── amazon_reviews_cleaned.csv
+│       └── .gitkeep
 │
 ├── src/
 │   ├── clean_dataset.py
@@ -227,7 +250,10 @@ statistical-reliability-online-product-ratings/
 │   └── reports/
 │
 ├── docs/
+│   └── project_report.md
+│
 ├── tests/
+│
 ├── requirements.txt
 ├── .gitignore
 └── README.md
@@ -238,15 +264,16 @@ statistical-reliability-online-product-ratings/
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/Kapil961/statistical-reliability-online-product-ratings.git
+git clone https://github.com/Kapil961/Statistical-reliability-online-product-ratings.git
 
-cd statistical-reliability-online-product-ratings
+cd Statistical-reliability-online-product-ratings
 ```
 
 ### 2. Create a virtual environment
 
 ```bash
 python3.11 -m venv .venv
+
 source .venv/bin/activate
 ```
 
@@ -256,15 +283,21 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-### 4. Prepare the dataset
+### 4. Verify dataset files
 
-Place the original Amazon Reviews CSV file at:
+Both datasets are already included in the repository.
 
-```text
-data/raw/amazon_reviews.csv
+Check that they exist:
+
+```bash
+ls -lh data/raw/amazon_reviews.csv
+
+ls -lh data/processed/amazon_reviews_cleaned.csv
 ```
 
 ### 5. Run the analyses in order
+
+Run the following scripts from the project root directory:
 
 ```bash
 python src/clean_dataset.py
@@ -272,14 +305,71 @@ python src/clean_dataset.py
 python src/exploratory_analysis.py
 
 python src/objective1_review_count_vs_rating.py
+
 python src/objective1_category_adjusted_regression.py
+
 python src/objective1_category_interaction.py
 
 python src/objective2_rating_reliability.py
+
 python src/objective2_clt_chebyshev.py
+
 python src/objective2_multi_product_reliability.py
 
 python src/objective3_product_reliability_measurement.py
 ```
 
-Generated reports are saved in `outputs/reports
+Generated plots are saved in `outputs/plots/`.
+
+Generated statistical reports and CSV summaries are saved in `outputs/reports/`.
+
+**Note:** Running the cleaning and analysis scripts regenerates the corresponding processed dataset and output files.
+
+## Technologies Used
+
+- Python 3.11
+- NumPy
+- Pandas
+- Matplotlib
+- Seaborn
+- SciPy
+- Statsmodels
+- Jupyter Notebook
+
+## Limitations
+
+- The dataset contains only four product categories.
+- A large proportion of products have only one review.
+- Products have highly unequal review counts.
+- The CLT and Chebyshev simulations use sampling with replacement from an empirical rating distribution.
+- The simulations illustrate statistical principles and do not establish that real customer reviews are independent or representative.
+- Regression results indicate associations and should not be interpreted as causal relationships.
+- Reliability classification thresholds are project-defined analytical choices.
+
+## Conclusion
+
+This project demonstrates how statistical concepts can be applied to understand the reliability of online product ratings.
+
+The analysis highlights that review count, rating variation, and standard error provide different information about a product's rating reliability.
+
+A product with a high average rating may still have limited statistical evidence when based on very few reviews. Therefore, product ratings should be interpreted by considering both the estimated average and the amount and variability of supporting review data.
+
+## Detailed Academic Report
+
+The complete academic project report, including methodology, statistical formulas, results, interpretations, limitations, and references, is available here:
+
+[`docs/project_report.md`](docs/project_report.md)
+
+## Dataset Reference
+
+McAuley Lab. *Amazon Reviews 2023*. University of California, San Diego.
+
+https://amazon-reviews-2023.github.io/
+
+## Author
+
+**Kapil Kumawat**
+
+B.Tech – Computer Science and Artificial Intelligence
+
+JK Lakshmipat University, Jaipur, Rajasthan
